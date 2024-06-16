@@ -285,3 +285,64 @@
 
 
 })(jQuery);
+
+function validateForm() {
+  let isValid = true;
+
+  // Clear previous error messages
+  document.getElementById('name-error').textContent = '';
+  document.getElementById('email-error').textContent = '';
+  document.getElementById('subject-error').textContent = '';
+  document.getElementById('message-error').textContent = '';
+
+  // Get form values
+  const name = document.getElementById('name').value.trim();
+  const email = document.getElementById('email').value.trim();
+  const subject = document.getElementById('subject').value.trim();
+  const message = document.getElementById('message').value.trim();
+
+  // Validate name
+  if (name === '') {
+      document.getElementById('name-error').textContent = 'Name is required.';
+      isValid = false;
+  } else if (!/^[a-zA-Z\s]+$/.test(name)) {
+      document.getElementById('name-error').textContent = 'Name can only contain letters and spaces.';
+      isValid = false;
+  }
+
+  // Validate email
+  if (email === '') {
+      document.getElementById('email-error').textContent = 'Email is required.';
+      isValid = false;
+  } else if (!/^\S+@\S+\.\S+$/.test(email)) {
+      document.getElementById('email-error').textContent = 'Please enter a valid email address.';
+      isValid = false;
+  }
+
+  // Validate subject
+  if (subject === '') {
+      document.getElementById('subject-error').textContent = 'Subject is required.';
+      isValid = false;
+  }
+
+  // Validate message
+  if (message === '') {
+      document.getElementById('message-error').textContent = 'Message is required.';
+      isValid = false;
+  }
+
+  if (isValid) {
+      // Display success message
+      document.getElementById('suce_message').style.display = 'inline-block';
+
+      // Hide success message after 2 seconds
+      setTimeout(function() {
+          document.getElementById('suce_message').style.display = 'none';
+      }, 2000);
+
+      // Clear form fields
+      document.getElementById('contact-form').reset();
+  }
+
+  return false; // Prevent form submission
+}

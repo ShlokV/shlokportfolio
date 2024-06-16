@@ -254,6 +254,15 @@ Primary use:    pxdraft
   -webkit-text-fill-color: transparent;
 }
 
+.text-theme1 {
+  background: linear-gradient(to right, #fff, #12c2e9, #f64f59);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 20px;
+  border-radius: 10px;
+  padding: 5px 20px;
+}
+
 .theme-bg-g {
   background: linear-gradient(to left, #12c2e9, #c471ed, #f64f59);
 }
@@ -568,7 +577,7 @@ main {
   width: 100%;
 }
 .home-section .home-image svg image {
-  width: 100%;
+  width: 350px;
 }
 
 .home-section .home-intro h6 {
@@ -715,6 +724,19 @@ main {
   margin: auto;
 }
 
+.progress-bar {
+  background: linear-gradient(90deg, #f64f59, #c471ed, #12c2e9);
+            background-size: 200% 200%;
+            animation: gradient-animation 3s ease infinite;
+
+}
+
+.error{
+  color: red;
+}
+
+
+
 .about-section .about-text .about-row {
   margin-bottom: 80px;
 }
@@ -803,6 +825,20 @@ main {
   font-size: 30px;
   color: #fff;
   border-radius: 50%;
+}
+
+.feature-box-01 .icon1 {
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  background: linear-gradient(to left, #12c2e9, #c471ed, #f64f59);
+  background-size: 120%;
+  font-size: 30px;
+  color: #fff;
+  border-radius: 5px;
 }
 .feature-box-01 .feature-content {
   padding-left: 20px;
